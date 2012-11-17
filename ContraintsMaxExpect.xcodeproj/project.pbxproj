@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D9D9648316575E04008C3BDF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D9648216575E04008C3BDF /* main.cpp */; };
+		D9D23923165767CE0020B34D /* structure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23922165767CE0020B34D /* structure.cpp */; };
+		D9D23928165768250020B34D /* pfunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23926165768250020B34D /* pfunction.cpp */; };
+		D9D2392B165768570020B34D /* forceclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23929165768570020B34D /* forceclass.cpp */; };
+		D9D23932165769900020B34D /* rna_library.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23930165769900020B34D /* rna_library.cpp */; };
+		D9D2393816576A730020B34D /* force_function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D2393616576A730020B34D /* force_function.cpp */; };
+		D9D2393B16576C390020B34D /* TProgressDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D2393916576C390020B34D /* TProgressDialog.cpp */; };
+		D9D9648316575E04008C3BDF /* ConstraintsMaxExpect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D9648216575E04008C3BDF /* ConstraintsMaxExpect.cpp */; };
 		D9D9648516575E04008C3BDF /* ContraintsMaxExpect.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9D9648416575E04008C3BDF /* ContraintsMaxExpect.1 */; };
 /* End PBXBuildFile section */
 
@@ -25,9 +31,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D9D23922165767CE0020B34D /* structure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = structure.cpp; path = ../../../RNAstructure/src/structure.cpp; sourceTree = "<group>"; };
+		D9D23925165767EC0020B34D /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = ../../../RNAstructure/src/defines.h; sourceTree = "<group>"; };
+		D9D23926165768250020B34D /* pfunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pfunction.cpp; path = ../../../RNAstructure/src/pfunction.cpp; sourceTree = "<group>"; };
+		D9D23927165768250020B34D /* pfunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pfunction.h; path = ../../../RNAstructure/src/pfunction.h; sourceTree = "<group>"; };
+		D9D23929165768570020B34D /* forceclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = forceclass.cpp; path = ../../../RNAstructure/src/forceclass.cpp; sourceTree = "<group>"; };
+		D9D2392A165768570020B34D /* forceclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = forceclass.h; path = ../../../RNAstructure/src/forceclass.h; sourceTree = "<group>"; };
+		D9D23930165769900020B34D /* rna_library.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = rna_library.cpp; path = ../../../RNAstructure/src/rna_library.cpp; sourceTree = "<group>"; };
+		D9D23931165769900020B34D /* rna_library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rna_library.h; path = ../../../RNAstructure/src/rna_library.h; sourceTree = "<group>"; };
+		D9D2393616576A730020B34D /* force_function.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = force_function.cpp; sourceTree = "<group>"; };
+		D9D2393716576A730020B34D /* force_function.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = force_function.h; sourceTree = "<group>"; };
+		D9D2393916576C390020B34D /* TProgressDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TProgressDialog.cpp; path = ../../../RNAstructure/src/TProgressDialog.cpp; sourceTree = "<group>"; };
+		D9D2393A16576C390020B34D /* TProgressDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TProgressDialog.h; path = ../../../RNAstructure/src/TProgressDialog.h; sourceTree = "<group>"; };
 		D9D9647E16575E04008C3BDF /* ContraintsMaxExpect */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ContraintsMaxExpect; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9D9648216575E04008C3BDF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D9D9648216575E04008C3BDF /* ConstraintsMaxExpect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConstraintsMaxExpect.cpp; sourceTree = "<group>"; };
 		D9D9648416575E04008C3BDF /* ContraintsMaxExpect.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ContraintsMaxExpect.1; sourceTree = "<group>"; };
+		D9FF97EB1657678A00B3DE51 /* structure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = structure.h; path = ../../../RNAstructure/src/structure.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +79,39 @@
 		D9D9648116575E04008C3BDF /* ContraintsMaxExpect */ = {
 			isa = PBXGroup;
 			children = (
-				D9D9648216575E04008C3BDF /* main.cpp */,
+				D9D964A116576411008C3BDF /* header */,
+				D9D9649F165763FA008C3BDF /* src */,
+				D9D9648216575E04008C3BDF /* ConstraintsMaxExpect.cpp */,
 				D9D9648416575E04008C3BDF /* ContraintsMaxExpect.1 */,
 			);
 			path = ContraintsMaxExpect;
+			sourceTree = "<group>";
+		};
+		D9D9649F165763FA008C3BDF /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D9D23930165769900020B34D /* rna_library.cpp */,
+				D9D23929165768570020B34D /* forceclass.cpp */,
+				D9D2393916576C390020B34D /* TProgressDialog.cpp */,
+				D9D23926165768250020B34D /* pfunction.cpp */,
+				D9D23922165767CE0020B34D /* structure.cpp */,
+				D9D2393616576A730020B34D /* force_function.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		D9D964A116576411008C3BDF /* header */ = {
+			isa = PBXGroup;
+			children = (
+				D9D2393A16576C390020B34D /* TProgressDialog.h */,
+				D9D2393716576A730020B34D /* force_function.h */,
+				D9D23931165769900020B34D /* rna_library.h */,
+				D9D2392A165768570020B34D /* forceclass.h */,
+				D9D23927165768250020B34D /* pfunction.h */,
+				D9D23925165767EC0020B34D /* defines.h */,
+				D9FF97EB1657678A00B3DE51 /* structure.h */,
+			);
+			name = header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,7 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D9648316575E04008C3BDF /* main.cpp in Sources */,
+				D9D9648316575E04008C3BDF /* ConstraintsMaxExpect.cpp in Sources */,
+				D9D23923165767CE0020B34D /* structure.cpp in Sources */,
+				D9D23928165768250020B34D /* pfunction.cpp in Sources */,
+				D9D2392B165768570020B34D /* forceclass.cpp in Sources */,
+				D9D23932165769900020B34D /* rna_library.cpp in Sources */,
+				D9D2393816576A730020B34D /* force_function.cpp in Sources */,
+				D9D2393B16576C390020B34D /* TProgressDialog.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +264,7 @@
 				D9D9648A16575E04008C3BDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
