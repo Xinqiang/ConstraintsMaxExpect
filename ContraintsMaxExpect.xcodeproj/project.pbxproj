@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D98FDD951659CAD400ACCF84 /* probabilityclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D98FDD931659CAD400ACCF84 /* probabilityclass.cpp */; };
 		D9D23923165767CE0020B34D /* structure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23922165767CE0020B34D /* structure.cpp */; };
 		D9D23928165768250020B34D /* pfunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23926165768250020B34D /* pfunction.cpp */; };
 		D9D2392B165768570020B34D /* forceclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23929165768570020B34D /* forceclass.cpp */; };
@@ -31,6 +32,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D98FDD931659CAD400ACCF84 /* probabilityclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = probabilityclass.cpp; sourceTree = "<group>"; };
+		D98FDD941659CAD400ACCF84 /* probabilityclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = probabilityclass.h; sourceTree = "<group>"; };
 		D9D23922165767CE0020B34D /* structure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = structure.cpp; path = ../../../RNAstructure/src/structure.cpp; sourceTree = "<group>"; };
 		D9D23925165767EC0020B34D /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = ../../../RNAstructure/src/defines.h; sourceTree = "<group>"; };
 		D9D23926165768250020B34D /* pfunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pfunction.cpp; path = ../../../RNAstructure/src/pfunction.cpp; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 				D9D23930165769900020B34D /* rna_library.cpp */,
 				D9D23929165768570020B34D /* forceclass.cpp */,
 				D9D2393916576C390020B34D /* TProgressDialog.cpp */,
+				D98FDD931659CAD400ACCF84 /* probabilityclass.cpp */,
 				D9D23926165768250020B34D /* pfunction.cpp */,
 				D9D23922165767CE0020B34D /* structure.cpp */,
 				D9D2393616576A730020B34D /* force_function.cpp */,
@@ -110,6 +114,7 @@
 				D9D23927165768250020B34D /* pfunction.h */,
 				D9D23925165767EC0020B34D /* defines.h */,
 				D9FF97EB1657678A00B3DE51 /* structure.h */,
+				D98FDD941659CAD400ACCF84 /* probabilityclass.h */,
 			);
 			name = header;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				D9D23932165769900020B34D /* rna_library.cpp in Sources */,
 				D9D2393816576A730020B34D /* force_function.cpp in Sources */,
 				D9D2393B16576C390020B34D /* TProgressDialog.cpp in Sources */,
+				D98FDD951659CAD400ACCF84 /* probabilityclass.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
