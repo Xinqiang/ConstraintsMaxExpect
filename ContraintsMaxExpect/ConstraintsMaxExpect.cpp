@@ -7,60 +7,178 @@
 //
 
 #include <iostream>
-#include "structure.h"
-#include "defines.h"
-#include "pfunction.h"
+#include <cstring>
+#include "probabilityclass.h"
 
 using namespace std;
-int main(int argc, const char * argv[])
+
+int main(int argc, char * argv[])
 {
-    ifstream pfsin("/Users/xinqiang/Research/RNASecondaryStructure/ContraintsMaxExpect/ContraintsMaxExpect/test.pfs", ios::in | ios::binary);
+    // Build the probabilitycalss prob using argv[1]: .pfs file name
+    probabilityclass prob(argv[1]);
     
-    if(!pfsin){
-        cout << "Cannot open file.\n";
-        return 1;
+    // the firt base index of a RNA segment.
+    int i;
+    // the end base index of a RNA segment.
+	int j;
+    // the base index between i and j, so i<=l<j.
+	int l;
+    // the length of RNA between base i and base j, so k = j-i+1.
+	int k;
+    // index between i and i+k-1
+    int m;
+    // the coefficent in the definatioin of Expected accuracy: S = 2*r*bsprob() + sgprob()
+    int r = 1;
+    
+    // funcition to see if two nucleotides can form cannocial pair
+    bool ifpair(char baseOne, char baseTwo);
+    
+    // Function used to generate the BracketNotation of RNA secondary structure recursively
+    void BracketNotation(int **P, int i, int j);
+    
+    // V[i][j] holds the Expected Accuracy of the segment between i and j on the condition i and j form a base pair.
+    //  V[i][j] = -1, if j-i+1 <=4
+    //  V[i][j] = -1, if i and j cannot form cannonical pair.
+    double **V;
+    V = new double *[prob.numofbases];
+    for (i = 0; i < prob.numofbases; i++){
+        V[i] = new double [prob.numofbases];
     }
-    short vers;
-    int  numofbases;
     
-    pfsin.read((char *) &vers, sizeof vers);
+    // W[i][j] holds the Expected Accuracy of the segment between i and j
+    double **W;
+    W = new double *[prob.numofbases];
+    for (i = 0; i < prob.numofbases; i++){
+        W[i] = new double [prob.numofbases];
+    }
     
-    cout << vers << "\n"; 
+    // P(i,j) is the k so that W(i,j) = W(i,k) + W(k+1,j) and i <= k < j,
+    // but if W(i,j) = V(i,j), then P(i,j) = 0; if j-i+1<=4, then P(i,j)=-1.
+    int **P = new int *[prob.numofbases];
+    for (i = 0; i < prob.numofbases; i++){
+        P[i] = new int [prob.numofbases];
+    }
     
-    structure *ct = new structure;
-    
-    pfsin.read((char *) &ct->numofbases, sizeof numofbases);
-    
-    cout << ct->numofbases << "\n";
-    
-    ct->allocate(ct->numofbases);
-    
-    double *w5 = new double [ct->numofbases + 1];
-    double *w3 = new double [ct->numofbases + 2];
-    pfunctionclass *v = new pfunctionclass(ct->numofbases);
-    pfunctionclass *w = new pfunctionclass(ct->numofbases);
-    pfunctionclass *wmb = new pfunctionclass(ct->numofbases);
-    pfunctionclass *wl = new pfunctionclass(ct->numofbases);
-    pfunctionclass *wmbl = new pfunctionclass(ct->numofbases);
-    pfunctionclass *wcoax = new pfunctionclass(ct->numofbases);
-    forceclass *fce = new forceclass(ct->numofbases);
-    double *scaling = new double;
-    bool *mod = new bool [2*ct->numofbases + 1];
-    bool *lfce = new bool [2*ct->numofbases + 1];
-    pfdatatable *data = new pfdatatable();
-    
-    readpfsave("/Users/xinqiang/Research/RNASecondaryStructure/ContraintsMaxExpect/ContraintsMaxExpect/test.pfs", ct, w5, w3, v, w, wmb, wl, wmbl, wcoax, fce, scaling, mod, lfce, data);
-    
-    cout << w3[1] << "\n" << ct->nucs << "\n";
-    cout << *scaling << "\n";
-    int i,j;
-    
-    for (i=1; i<=ct->numofbases; i++){
-        for (j=i+1; j<=ct->numofbases; j++){
-            cout << calculateprobability(i,j, v, w5, ct, data, lfce, mod, *scaling, fce) << " ";
+    // fill the V, W and P array
+    for (k = 1; k <=prob.numofbases; k++){
+        if (k <= 4) {
+            for (i = 0; i <= prob.numofbases - k; i++) {
+                V[i][i+k-1] = -1;
+                P[i][i+k-1] = -1;
+                W[i][i+k-1] = 0;
+                for (m = i; m <= i+k-1; m++) {
+                    W[i][i+k-1] += prob.sgprob[m];
+                }
+            }
+        }else{
+            for (i = 0; i <= prob.numofbases - k; i++) {
+                if (! ifpair(prob.nucleotide[i], prob.nucleotide[i+k-1])){
+                    V[i][i+k-1] = -1;
+                }else{
+                    V[i][i+k-1] = 2 * r * prob.bpprob[i][i+k-1] + W[i+1][i+k-2];
+                }
+                W[i][i+k-1] = V[i][i+k-1];
+                P[i][i+k-1] = 0;
+                for (l = i; l < i+k-1; l++) {
+                    if (W[i][i+k-1] < (W[i][l] + W[l+1][i+k-1])) {
+                        W[i][i+k-1] = W[i][l] + W[l+1][i+k-1];
+                        P[i][i+k-1] = l;
+                    }
+                }
+            }
         }
-        cout << "\n";
     }
+    
+    
+// Print the V, W and P array
+	for (j = prob.numofbases-1; j >= 0; j--){
+		for (i = 0; i <=j ; i++){
+			cout << V[i][j] << ' ';
+		}
+		cout << '\n';
+	}
+    
+	for (j = prob.numofbases-1; j >= 0; j--){
+		for (i = 0; i <=j ; i++){
+			cout << W[i][j] << ' ';
+		}
+		cout << '\n';
+	}
+    
+	for (j = prob.numofbases-1; j >= 0; j--){
+		for (i = 0; i <=j ; i++){
+			cout << P[i][j] << ' ';
+		}
+		cout << '\n';
+	}
+    
+    cout << prob.nucleotide << "\n";
+    BracketNotation(P, 0, prob.numofbases-1);
     return 0;
 }
 
+
+// Print the bracket notation for RNA secondary structures
+void BracketNotation(int **P, int i, int j){
+	if (i<j){
+		if(P[i][j]==0){
+			cout << '(';
+			BracketNotation(P,i+1,j-1);
+			cout << ')';
+		}
+		else if(P[i][j]==-1){
+			cout << '.';
+			BracketNotation(P,i+1,j-1);
+			cout << '.';
+		}
+		else{
+			BracketNotation(P,i,P[i][j]);
+			BracketNotation(P,P[i][j]+1,j);
+		}
+	}
+	else if (i==j){
+		cout << '.';
+		return;
+	}
+}
+
+
+// function used to see if two nucleotides can form cannonical pairing
+bool ifpair(char baseOne, char baseTwo){
+    baseOne = toupper(baseOne);
+	baseTwo = toupper(baseTwo);
+	switch(baseOne){
+		case 'A':{
+			switch (baseTwo){
+				case 'A': return false;
+				case 'U': return true;
+				case 'G': return false;
+				case 'C': return false;
+			}
+		}
+		case 'U':{
+			switch (baseTwo){
+				case 'A': return true;
+				case 'U': return false;
+				case 'G': return true;
+				case 'C': return false;
+			}
+		}
+		case 'C':{
+			switch (baseTwo){
+				case 'A': return false;
+				case 'U': return false;
+				case 'G': return true;
+				case 'C': return false;
+			}
+		}
+		case 'G':{
+			switch (baseTwo){
+				case 'A': return false;
+				case 'U': return true;
+				case 'G': return false;
+				case 'C': return true;
+			}
+		}
+    }
+}
