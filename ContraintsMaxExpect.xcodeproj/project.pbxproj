@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D98FDD951659CAD400ACCF84 /* probabilityclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D98FDD931659CAD400ACCF84 /* probabilityclass.cpp */; };
+		D98FDDAC166319B600ACCF84 /* MaxExpectFold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D98FDDAA166319B600ACCF84 /* MaxExpectFold.cpp */; };
 		D9D23923165767CE0020B34D /* structure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23922165767CE0020B34D /* structure.cpp */; };
 		D9D23928165768250020B34D /* pfunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23926165768250020B34D /* pfunction.cpp */; };
 		D9D2392B165768570020B34D /* forceclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D9D23929165768570020B34D /* forceclass.cpp */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		D98FDD931659CAD400ACCF84 /* probabilityclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = probabilityclass.cpp; sourceTree = "<group>"; };
 		D98FDD941659CAD400ACCF84 /* probabilityclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = probabilityclass.h; sourceTree = "<group>"; };
+		D98FDDAA166319B600ACCF84 /* MaxExpectFold.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MaxExpectFold.cpp; sourceTree = "<group>"; };
+		D98FDDAB166319B600ACCF84 /* MaxExpectFold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxExpectFold.h; sourceTree = "<group>"; };
 		D9D23922165767CE0020B34D /* structure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = structure.cpp; path = ../../../RNAstructure/src/structure.cpp; sourceTree = "<group>"; };
 		D9D23925165767EC0020B34D /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = ../../../RNAstructure/src/defines.h; sourceTree = "<group>"; };
 		D9D23926165768250020B34D /* pfunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pfunction.cpp; path = ../../../RNAstructure/src/pfunction.cpp; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 				D9D23929165768570020B34D /* forceclass.cpp */,
 				D9D2393916576C390020B34D /* TProgressDialog.cpp */,
 				D98FDD931659CAD400ACCF84 /* probabilityclass.cpp */,
+				D98FDDAA166319B600ACCF84 /* MaxExpectFold.cpp */,
 				D9D23926165768250020B34D /* pfunction.cpp */,
 				D9D23922165767CE0020B34D /* structure.cpp */,
 				D9D2393616576A730020B34D /* force_function.cpp */,
@@ -111,6 +115,7 @@
 				D9D2393716576A730020B34D /* force_function.h */,
 				D9D23931165769900020B34D /* rna_library.h */,
 				D9D2392A165768570020B34D /* forceclass.h */,
+				D98FDDAB166319B600ACCF84 /* MaxExpectFold.h */,
 				D9D23927165768250020B34D /* pfunction.h */,
 				D9D23925165767EC0020B34D /* defines.h */,
 				D9FF97EB1657678A00B3DE51 /* structure.h */,
@@ -178,6 +183,7 @@
 				D9D2393816576A730020B34D /* force_function.cpp in Sources */,
 				D9D2393B16576C390020B34D /* TProgressDialog.cpp in Sources */,
 				D98FDD951659CAD400ACCF84 /* probabilityclass.cpp in Sources */,
+				D98FDDAC166319B600ACCF84 /* MaxExpectFold.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
